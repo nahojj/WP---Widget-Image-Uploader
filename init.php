@@ -64,7 +64,7 @@ Class widget_media_upload extends WP_Widget {
                         </div>
                     <?php endif; ?>
                     <?php if($image) : ?>
-                        <div class="widget-upload-image__title">
+                        <div class="widget-upload-image__img">
                             <img src="<?php echo $image; ?>" alt="" />
                         </div>
                     <?php  endif; ?>
