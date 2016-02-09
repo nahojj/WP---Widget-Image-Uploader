@@ -51,22 +51,25 @@ Class widget_media_upload extends WP_Widget {
 
     public function widget($args, $instance) {
         // Add any html to output the image in the $instance array
-        $title = $instance['title'];
-        $image = $instance['image'];
+        $self  = $instance;
+        $title = $self['title'];
+        $image = $self['image'];
 
         ?>
-            <div class="widget-upload-image">
-                <?php if($title) : ?>
-                    <div class="widget-upload-image__title">
-                        <h2><?php echo $title; ?></h2>
-                    </div>
-                    <?php if($image) : ?>
+            <?php if($self) : ?>
+                <div class="widget-upload-image">
+                    <?php if($title) : ?>
                         <div class="widget-upload-image__title">
-                            <img src="<?php echo $image; ?>" alt="" />
+                            <h2><?php echo $title; ?></h2>
                         </div>
-                    <?php  endif; ?>
-                <?php endif; ?>
-            </div>
+                        <?php if($image) : ?>
+                            <div class="widget-upload-image__title">
+                                <img src="<?php echo $image; ?>" alt="" />
+                            </div>
+                        <?php  endif; ?>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
         <?php
     }
 
